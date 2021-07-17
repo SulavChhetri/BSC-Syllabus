@@ -1,6 +1,12 @@
+import 'package:bscsyllabus/formula.dart';
+import 'package:bscsyllabus/notes.dart';
+import 'package:bscsyllabus/questionpaper.dart';
 import 'package:flutter/material.dart';
 import 'input_page.dart';
 import 'constants.dart';
+import 'syllabus.dart';
+import 'notices.dart';
+import 'notes.dart';
 
 void main(){
   runApp(MyApp());
@@ -18,7 +24,15 @@ class MyApp extends StatelessWidget {
         canvasColor: kActivecardcolor,
         scaffoldBackgroundColor: kInactivecardcolor,
       ),
-      home: InputPage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context)=> InputPage(),
+        '/first': (context)=> Syllabus(),
+        '/second':(context)=> QuestionPaper(),
+        '/third': (context)=> Notes(),
+        '/fourth':(context)=> Formula(),
+        '/fifth': (context)=> Notice(),
+      },
     );
   }
 }

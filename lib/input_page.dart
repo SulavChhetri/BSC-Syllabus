@@ -1,10 +1,11 @@
+import 'drawers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'constants.dart';
 import 'Reusable_containers.dart';
-import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'icon_contents.dart';
 
 class InputPage extends StatefulWidget {
   const InputPage({Key? key}) : super(key: key);
@@ -17,34 +18,7 @@ class _InputPageState extends State<InputPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            DrawerHeader(
-              padding: EdgeInsets.zero,
-              decoration: BoxDecoration(
-                color: kInactivecardcolor,
-              ),
-              child: Center(child: Text('BSC Syllabus',style: kHeadtitle,),),),
-            ListTile(
-              leading: Icon(FontAwesomeIcons.facebook),
-              title: Text('Rate us in facebook',style: kBodytext,),
-            ),
-            ListTile(
-              leading: Icon(FontAwesomeIcons.user),
-              title: Text('About Developers', style: kBodytext,),
-            ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('Settings and Privacy'),
-            ),
-            ListTile(
-              leading: Icon(FontAwesomeIcons.signOutAlt),
-              title: Text('Exit App'),
-            ),
-          ],
-        ),
-      ),
+      drawer: Drawers(),
       appBar: AppBar(
         title: Text(
           'BSC Syllabus',
@@ -59,9 +33,14 @@ class _InputPageState extends State<InputPage> {
               child: Row(
                 children: <Widget>[
                   Reuseablecontainer(
-                    cardchild: Iconcontent(
-                      icon: Icons.library_books,
-                      icontext: 'Syllabus',
+                    cardchild: TextButton(
+                      onPressed: (){
+                        Navigator.pushNamed(context, '/first');
+                      },
+                      child: Iconcontent(
+                        icon: Icons.library_books,
+                        icontext: 'Syllabus',
+                      ),
                     ),
                   ),
                   Reuseablecontainer(
@@ -117,4 +96,5 @@ class _InputPageState extends State<InputPage> {
     );
   }
 }
+
 

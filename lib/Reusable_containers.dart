@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'constants.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 
 class Reuseablecontainer extends StatelessWidget {
   final Widget cardchild;
@@ -21,29 +19,3 @@ class Reuseablecontainer extends StatelessWidget {
   }
 }
 
-class Iconcontent extends StatelessWidget {
-
-  final IconData icon;
-  final String icontext;
-  Iconcontent({required this.icon, required this.icontext});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(
-          icon,
-          size: 60,
-        ),
-        SizedBox(
-          height: 5,
-        ),
-        Text(
-          icontext,
-          style: kBodytext,
-        ),
-      ],
-    );
-  }
-}
